@@ -1,0 +1,92 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root{
+    --shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.back_arrow_btn{
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 2px solid black;
+    padding: 2px;
+    background-color: #F7F7F7;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: turquoise;
+    text-align: center;
+}
+
+.main{
+    margin: 4rem 0;
+    background-color: white;
+    padding: 4rem;
+    border-radius: 10px;
+    box-shadow:var(--shadow);
+}
+
+.input_fields{
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    text-align: start;
+}
+
+.input_field{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: medium;
+    font-weight: bold;
+    color: grey;
+}
+
+.input_field input,select{
+    width: 20rem;
+    padding: 6px;
+    border-radius: 5px;
+    border: 2px solid lightgrey;
+}
+
+.input_field select{
+    width: 21rem;
+    color: gray;
+}
+
+
+.input_field input:focus ,select:focus{
+    border: 2px solid turquoise;
+    outline: none;
+}
+
+.hidden_input{
+    display: none;
+}
+
+
+.predict_btn{
+    padding: 10px 12px;
+    background-color: turquoise;
+    border: none;
+    border-radius: 5px;
+    font-size: medium;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+.predict_btn:active{
+    box-shadow: var(--shadow);
+}

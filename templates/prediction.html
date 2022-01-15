@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='./css/predictor.css')}}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <title>Heart-Disease-Prediction</title>
+</head>
+
+<body>
+    <div class="back_arrow_btn"><a href="/"><img src="{{url_for('static',filename='./images/back_arrow.png')}}"
+                style="width: 100%; height: 100%; border-radius: 50%;" alt="back" /></a></div>
+    <form action="/predictresult/" method="POST">
+        <section class="main">
+            <h1 style="margin-bottom: 2rem; font-size: xx-large; color: turquoise;">Predictor</h1>
+            <div class="input_fields">
+                <div class="input_field">
+                    <label for="ag">Age(in years)</label>
+                    <input type="number" id="ag" name="age" required>
+                </div>
+                <div class="input_field">
+                    <label for="c1">Gender</label>
+                    <select id="c1" name="gender" required >
+                        <option value="">--- Select Your Gender ---</option>
+                        <option value=1>Male</option>
+                        <option value=0>Female</option>
+                    </select>
+                    <input type="text" class="hidden_input" id="hidden_input1" name="gen"/>
+                </div>
+            </div>
+            <div class="input_fields">
+                <div class="input_field">
+                    <label for="c2">CP(Chest Pain)</label>
+                    <select id="c2" name="cp" required >
+                        <option value="">--- Select CP Type ---</option>
+                        <option value=1>Typical Angina</option>
+                        <option value=2>Atypical Angina</option>
+                        <option value=3>Non-anginal Pain</option>
+                        <option value=4>Asymptomatic</option>
+                    </select>
+                    <input type="text" class="hidden_input" id="hidden_input2" name="chp"/>
+                </div>
+                <div class="input_field">
+                    <label for="tr">Trestbps(Resting Blood Pressure)</label>
+                    <input type="number" id="tr" name="trestbps" required>
+                </div>
+            </div>
+            <div class="input_fields">
+                <div class="input_field">
+                    <label for="ch">Chol(Serum Cholestrol)</label>
+                    <input type="number" id="ch" name="chol" required>
+                </div>
+                <div class="input_field">
+                    <label for="c3">Fbs(Fasting Blood Sugar > 120 mg/dl)</label>
+                    <select id="c3" name="fbs" required >
+                        <option value="">--- Select ---</option>
+                        <option value=1>Yes</option>
+                        <option value=0>No</option>
+                    </select>
+                    <input type="text" class="hidden_input" id="hidden_input3" name="fb"/>
+                </div>
+            </div>
+            <div class="input_fields">
+                <div class="input_field">
+                    <label for="c4">Restecg(Resting Electrocardiographic Results)</label>
+                    <select id="c4" name="restecg" required >
+                        <option value="">--- Select Restecg Type ---</option>
+                        <option value=0>Normal</option>
+                        <option value=1>Having ST-T wave abnormality</option>
+                        <option value=2>Showing probable or definite left ventricular hypertrophy by Estes' criteria</option>
+                    </select>
+                    <input type="text" class="hidden_input" id="hidden_input4" name="rer"/>
+                </div>
+                <div class="input_field">
+                    <label for="th">Thalach</label>
+                    <input type="number" id="th" name="thalach" required>
+                </div>
+            </div>
+            <div class="input_fields">
+                <div class="input_field">
+                    <label for="c5">Exang(Exercise Induced Angina)</label>
+                    <select id="c5" name="exang" required >
+                        <option value="">--- Select ---</option>
+                        <option value=0>No</option>
+                        <option value=1>Yes</option>
+                    </select>
+                    <input type="text" class="hidden_input" id="hidden_input5" name="eia"/>
+                </div>
+                <div class="input_field">
+                    <label for="ol">Oldpeak</label>
+                    <input type="text" id="ol" name="oldpeak" required>
+                </div>
+            </div>
+            <div class="input_fields">
+                <div class="input_field">
+                    <label for="c6">Slope</label>
+                    <select id="c6" name="slope" required >
+                        <option value="">--- Select Slope Type ---</option>
+                        <option value=1>Upsloping</option>
+                        <option value=2>Flat</option>
+                        <option value=3>Downsloping</option>
+                    </select>
+                    <input type="text" class="hidden_input" id="hidden_input6" name="slo"/>
+                </div>
+                <div class="input_field">
+                    <label for="ca">Ca</label>
+                    <input type="number" placeholder="Enter value from 0-3" id="ca" name="ca" min="0" max="3" required>
+                </div>
+            </div>
+            <div class="input_fields">
+                <div class="input_field" style="text-align: center;">
+                    <label for="c7">Thal</label>
+                    <select id="c7" name="thal" required >
+                        <option value="">--- Select Thal Type ---</option>
+                        <option value=3>Normal</option>
+                        <option value=6>Fixed Defect</option>
+                        <option value=7>Reversable Defect</option>
+                    </select>
+                    <input type="text" class="hidden_input" id="hidden_input7" name="tha"/>
+                </div>
+            </div>
+            <button type="submit" class="predict_btn">Predict</button>
+        </section>
+    </form>
+
+    <script>
+        for(let i=1; i<8 ; i++){
+            $(`#c${i}`).on('change',function() {
+                var chp = $(this).find("option:selected").text();
+                document.getElementById(`hidden_input${i}`).value = chp
+            });
+        }
+        
+    </script>
+</body>
+</html>

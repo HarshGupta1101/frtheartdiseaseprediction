@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='./css/style.css')}}">
+    <title>Heart-Disease-Prediction</title>
+</head>
+
+<body>
+    <div class="nav">
+        <h2><a href="/" style="color: white; text-decoration: none;">Heart Disease Prediction System</a></h2>
+        <div class="links">
+            <a href="/">Home</a>
+            <a href="#about_section">About</a>
+            <a href="/predict">Predictor</a>
+        </div>
+    </div>
+    <div class="banner_img">
+        <div class="banner_contents">
+            <h1 style="font-size: 2.5rem">EXAMINING YOUR HEARTS !</h1>
+            <p style="font-size: large;">The goal of this project is to train a machine learning model using Azure Machine Learning service to accurately predict
+                whether a sample patient has been diagnosed with the heart disease, with higher
+                accuracy possible.
+            </p>
+            <button class="banner_btn1"><a href="/predict">CHECK YOUR HEART</a></button>
+        </div>
+    </div>
+    <div class="main">
+        <div class="main_heading">
+            <h2 style="color: gray;">Heart Disease Prediction System Using Azure Machine Learning</h2>
+        </div>
+        <div class="image_grid">
+            <div class="image_container">
+                <div class="image">
+                    <img style="width: 100%; height: 100%;" src="{{url_for('static',filename='./images/heart_1.jpg')}}"
+                        alt="grid_img">
+                </div>
+                <div class="img_description">
+                    <p>The heart is a muscular organ in most animals, which pumps blood through the blood vessels of the
+                        circulatory system. The pumped blood carries oxygen and nutrients to the body, while carrying
+                        metabolic waste such as carbon dioxide to the lungs.</p>
+                </div>
+            </div>
+            <div class="image_container">
+                <div class="image">
+                    <img style="width: 100%; height: 100%; " src="{{url_for('static',filename='./images/heart_2.jpg')}}"
+                        alt="grid_img">
+                </div>
+                <div class="img_description">
+                    <p>Don't smoke. Control other health conditions, such as high blood pressure, high cholesterol and
+                        diabetes. Exercise at least 30 minutes a day on most days of the week. Eat a diet that's low in
+                        salt and saturated fat. These are some of the ways you can prevent heart disease.</p>
+                </div>
+            </div>
+            <div class="image_container">
+                <div class="image">
+                    <img style="width: 100%; height: 100%;" src="{{url_for('static',filename='./images/heart_3.jpg')}}"
+                        alt="grid_img">
+                </div>
+                <div class="img_description">
+                    <p>Heart disease is a type of disease that affects the heart or blood vessels. The risk of certain heart diseases may
+                        be increased by smoking, high blood pressure, high cholesterol, unhealthy diet, lack of
+                        exercise, and obesity. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="about" id="about_section">
+        <div class="about_img">
+            <img src="{{url_for('static',filename='./images/about_img.png')}}" style="border-radius: 1rem;" alt="about">
+        </div>
+        <div class="about_text">
+            <h2 class="about_text_heading">ABOUT HEART DISEASE PREDICTION SYSTEM</h2>
+            <p class="about_text_description" style="font-size: smaller;">Healthcare industry has huge amount of data
+                that contains hidden
+                information.
+                This information supports
+                decision making process on related area.I have used various approaches of data
+                mining which are useful in predicting the heart disease. One of the complex tasks in healthcare industry
+                is predicting of heart disease and it requires more experience and knowledge. Some of the ways of
+                predicting heart diseases are ECG, stress test and heart MRI etc. Here the system uses 14 parameters for
+                predicting heart disease that include blood pressure, cholesterol, chest pain and heart rate. These
+                parameters are used to improve an accuracy level.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>@Copyright Heart Disease Prediction</p>
+    </div>
+    <button onclick="topFunction()" id="top_btn" title="Go to top">^</button>
+</body>
+<script>
+
+    var mybutton = document.getElementById("top_btn");
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+</html>

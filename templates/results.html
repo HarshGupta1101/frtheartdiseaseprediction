@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='./css/result.css')}}">
+    <title>Heart-Disease-Prediction</title>
+</head>
+<body>
+    <div class="back_arrow_btn"><a href="/predict"><img src="{{url_for('static',filename='./images/back_arrow.png')}}" style="width: 100%; height: 100%; border-radius: 50%;" alt="back"/></a></div>
+    <div class="main">
+        <div class="main_heading">
+            <h2>Your Heart Disease Prediction Result</h2>
+        </div>
+        {% if form_data[0] == 1 %}
+            <h3 style="background-color: #9A3234; width: fit-content; color: white;">You are suffered from Heart Disease</h3>
+        {% else %}
+            <h3 style="background-color: #9A3234; width: fit-content; color: white;">You are not suffered from Heart Disease</h3>
+        {% endif %}
+        <div class="inner_div">
+            <table>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Input</th>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td>{{form_data[1]}}</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>{{form_data[2]}}</td>
+                </tr>
+                <tr>
+                    <td>Cp</td>
+                    <td>{{form_data[3]}}</td>
+                </tr>
+                <tr>
+                    <td>Trestbps</td>
+                    <td>{{form_data[4]}}</td>
+                </tr>
+                <tr>
+                    <td>Chol</td>
+                    <td>{{form_data[5]}}</td>
+                </tr>
+                <tr>
+                    <td>Fbs</td>
+                    <td>{{form_data[6]}}</td>
+                </tr>
+                <tr>
+                    <td>Restecg</td>
+                    <td>{{form_data[7]}}</td>
+                </tr>
+                <tr>
+                    <td>Thalach</td>
+                    <td>{{form_data[8]}}</td>
+                </tr>
+                <tr>
+                    <td>Exang</td>
+                    <td>{{form_data[9]}}</td>
+                </tr>
+                <tr>
+                    <td>Oldpeak</td>
+                    <td>{{form_data[10]}}</td>
+                </tr>
+                <tr>
+                    <td>Slope</td>
+                    <td>{{form_data[11]}}</td>
+                </tr>
+                <tr>
+                    <td>Ca</td>
+                    <td>{{form_data[12]}}</td>
+                </tr>
+                <tr>
+                    <td>Thal</td>
+                    <td>{{form_data[13]}}</td>
+                </tr>
+                </table>
+            <div class="image_container">
+                <img src="{{url_for('static',filename = './images/resultimg.jpg')}}" alt="heart_img">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
