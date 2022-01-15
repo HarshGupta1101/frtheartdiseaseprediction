@@ -150,8 +150,8 @@
   #top_btn {
     display: none;
     position: fixed;
-    bottom: 20px;
-    right: 30px;
+    bottom: 30px;
+    right: 40px;
     z-index: 99;
     font-size: 20px;
     border: none;
