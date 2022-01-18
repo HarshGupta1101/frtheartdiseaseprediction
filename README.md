@@ -8,7 +8,7 @@ exang(exercise induced angina),oldpeak(ST depression induced by exercise relativ
 thal,num(the predicted attribute(angiographic disease status))
 
 ## Tech Stack
-Azure Machine Learning
-Azure Container Instances
-Azure App Services
+Azure Machine Learning</br>
+Azure Container Instances</br>
+Azure App Services</br>
 Flask
