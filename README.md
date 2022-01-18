@@ -7,7 +7,7 @@ chol(serum cholestoral in mg/dl),fbs(fasting blood sugar > 120 mg/dl),restecgres
 exang(exercise induced angina),oldpeak(ST depression induced by exercise relative to rest),slope(the slope of the peak exercise ST segment),ca(number of major vessels (0-3) colored by flourosopy),
 thal,num(the predicted attribute(angiographic disease status))
 
-##Tech Stack
+#Tech Stack
 Azure Machine Learning
 Azure Container Instances
 Azure App Services
